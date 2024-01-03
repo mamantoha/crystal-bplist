@@ -1,6 +1,9 @@
 # crystal-bplist
 
-TODO: Write a description here
+Apple's binary property list format implementation in Crystal.
+
+This library provides an interface for reading and writing the “property list” files used by Apple, primarily on macOS and iOS.
+This library supports only binary plist files.
 
 ## Installation
 
@@ -25,6 +28,14 @@ TODO: Write usage instructions here
 ## Development
 
 TODO: Write development instructions here
+
+## Useful links
+
+- https://medium.com/@karaiskc/understanding-apples-binary-property-list-format-281e6da00dbd
+- https://opensource.apple.com/source/CF/CF-635/CFBinaryPList.c.auto.html
+- https://docs.python.org/3/library/plistlib.html
+- https://github.com/python/cpython/blob/main/Lib/plistlib.py
+- http://fileformats.archiveteam.org/wiki/Property_List/Binary
 
 ## Contributing
 
