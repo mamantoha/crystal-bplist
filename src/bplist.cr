@@ -1,6 +1,14 @@
-# TODO: Write documentation for `Bplist`
+require "bytes_ext"
+require "./bplist/*"
+
 module Bplist
   VERSION = "0.1.0"
 
-  # TODO: Put your code here
+  # Generic Bplist error.
+  class Error < Exception
+  end
+
+  def self.parse(input)
+    Parser.new(input).parse
+  end
 end

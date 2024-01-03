@@ -6,4 +6,13 @@ authors:
 
 crystal: '>= 1.0.0'
 
+dependencies:
+  bytes_ext:
+    github: mamantoha/bytes_ext
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    branch: master
+
 license: MIT
