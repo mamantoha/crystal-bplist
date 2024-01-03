@@ -2,6 +2,8 @@ require "../src/bplist"
 
 Bplist::Parser.debug = true
 
+# diff -y <(xxd assets/example.plist) <(xxd assets/example_mod.plist)
+
 bplist = Bplist::Parser.new("#{__DIR__}/../assets/example.plist")
 # bplist = Bplist::Parser.new("#{__DIR__}/../assets/example_mod.plist")
 
