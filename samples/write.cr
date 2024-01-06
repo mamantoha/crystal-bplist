@@ -8,7 +8,7 @@ hash = {
   "ExampleDictionary" => {
     # 7              9
     "ExampleDate" => Time.parse("2023-04-01 12:00:00 +00:00", "%Y-%m-%d %H:%M:%S %z", Time::Location::UTC),
-    # 9               10
+    # 8               10
     "ExampleArray" => [
       # 11
       "Item 1",
