@@ -18,9 +18,10 @@ module Bplist
       @object_lookup = {} of Bplist::Any => Int32
 
       @indexed_list = [] of Bplist::Any
-      @linked_elements = Hash(Int32, Array(Int32)).new() { |hsh, k| hsh[k] = [] of Int32 }
+      @linked_elements = Hash(Int32, Array(Int32)).new { |hsh, k| hsh[k] = [] of Int32 }
 
       index = parent_index = 0
+
       traverse(hash, index, parent_index)
 
       # Size of object references in serialized containers
@@ -336,20 +337,16 @@ module Bplist
       @io.write(Bytes.new(6, 0_u8)) # Fill with zeros
 
       # Byte 6: Offset table offset size (assuming 64-bit offsets)
-      offset_table_offset_size = @offset_table_offset_size.to_u8
-      @io.write_byte(offset_table_offset_size)
+      @io.write_byte(@offset_table_offset_size.to_u8)
 
       # Byte 7: Object reference size (assuming 64-bit references)
-      object_ref_size = @object_ref_size.to_u8
-      @io.write_byte(object_ref_size)
+      @io.write_byte(@object_ref_size.to_u8)
 
       # Bytes 8-15: Number of objects
-      num_objects = @offsets.size.to_u64.to_be_bytes
-      @io.write(num_objects)
+      @io.write(@offsets.size.to_u64.to_be_bytes)
 
       # Bytes 16-23: Top object offset (usually zero)
-      top_object_offset = 0_u64.to_be_bytes
-      @io.write(top_object_offset)
+      @io.write(0_u64.to_be_bytes)
 
       # Bytes 24-31: Offset table start
       @io.write(@offset_table_start.to_u64.to_be_bytes)
