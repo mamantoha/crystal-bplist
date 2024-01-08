@@ -21,6 +21,8 @@ Values can be strings, integers, floats, booleans, arrays, hashes (but only with
 
 ## Usage
 
+### `Bplist::Writer`
+
 Convert Crystal hash to bplist format:
 
 ```crystal
@@ -79,6 +81,28 @@ cat assets/example_mod.xml
 		<string>Hello, world!</string>
 	</dict>
 </plist>
+```
+
+### `Bplist::Parser`
+
+Parse binary plist file and return `Bplist::Any`
+
+```crystal
+require "bplist"
+
+bplist = Bplist::Parser.new("#{__DIR__}/../assets/example.plist")
+
+result = bplist.parse
+pp result
+```
+
+```crystal
+{"ExampleDictionary" =>
+  {"ExampleDate" => 2023-04-01 12:00:00.0 UTC,
+   "ExampleArray" => ["Item 1", "Item 2", "Item 3"]},
+ "ExampleString" => "Hello, world!",
+ "ExampleInteger" => 42,
+ "ExampleBoolean" => true}
 ```
 
 ## Development
