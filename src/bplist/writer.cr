@@ -20,9 +20,7 @@ module Bplist
       @indexed_list = [] of Bplist::Any
       @linked_elements = Hash(Int32, Array(Int32)).new { |hsh, k| hsh[k] = [] of Int32 }
 
-      index = parent_index = 0
-
-      traverse(hash, index, parent_index)
+      traverse(hash)
 
       # Size of object references in serialized containers
       # depends on the number of objects in the plist.
@@ -47,7 +45,7 @@ module Bplist
       write_trailer
     end
 
-    private def traverse(element, index : Int32, parent_index : Int32) : Int32
+    private def traverse(element, index : Int32 = 0, parent_index : Int32 = 0) : Int32
       element = element.raw if element.is_a?(Bplist::Any)
 
       object = Bplist::Any.convert(element)
