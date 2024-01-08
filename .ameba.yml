@@ -1,0 +1,21 @@
+Lint/DebugCalls:
+  Description: Disallows debug-related calls
+  Excluded:
+  - src/bplist/parser.cr
+  - src/bplist/writer.cr
+  - samples/*
+  MethodNames:
+  - p
+  - p!
+  - pp
+  - pp!
+  Enabled: true
+  Severity: Warning
+
+Metrics/CyclomaticComplexity:
+  Description: Disallows methods with a cyclomatic complexity higher than `MaxComplexity`
+  MaxComplexity: 10
+  Excluded:
+  - src/bplist/parser.cr
+  Enabled: true
+  Severity: Warning

@@ -269,7 +269,7 @@ module Bplist
 
     private def calculate_ref_index(ref_bytes : Bytes) : UInt64
       ref_bytes.reduce(0_u64) do |ref_index, byte|
-        ref_index = (ref_index << 8) | byte.to_u64
+        (ref_index << 8) | byte.to_u64
       end
     end
 
@@ -291,7 +291,7 @@ module Bplist
       # Combine the length bytes to form the actual length.
       # The bytes are combined in a big-endian fashion: shifting each byte and OR-ing it to the total length.
       length_bytes.reduce(0_u64) do |length, byte|
-        length = (length << 8) | byte.to_u64
+        (length << 8) | byte.to_u64
       end
     end
 
