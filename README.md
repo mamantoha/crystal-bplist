@@ -1,5 +1,7 @@
 # crystal-bplist
 
+[![Crystal CI](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml/badge.svg)](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml)
+
 Apple's binary property list format implementation in Crystal.
 
 `bplist` module provides an interface for reading and writing the “property list” files used by Apple, primarily on macOS and iOS.
