@@ -1,6 +1,8 @@
 # crystal-bplist
 
 [![Crystal CI](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml/badge.svg)](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml)
+[![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://mamantoha.github.io/crystal-bplist/)
+[![License](https://img.shields.io/github/license/mamantoha/crystal-bplist.svg)](https://github.com/mamantoha/crystal-bplist/blob/main/LICENSE)
 
 Apple's binary property list format implementation in Crystal.
 
