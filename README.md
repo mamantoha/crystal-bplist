@@ -23,7 +23,7 @@ Values can be strings, integers, floats, booleans, arrays, hashes (but only with
 
 ### `Bplist::Writer`
 
-Convert Crystal hash to bplist format:
+Transform a Crystal hash into bplist format:
 
 ```crystal
 require "bplist"
@@ -50,7 +50,7 @@ writer.write_to_file("#{__DIR__}/../assets/example_mod.plist")
 crystal ./samples/write.cr
 ```
 
-Rewrite property list files in format XML:
+Rewrite the property list file in XML format:
 
 ```sh
 plutil -convert xml1 assets/example_mod.plist -o assets/example_mod.xml
@@ -85,7 +85,7 @@ cat assets/example_mod.xml
 
 ### `Bplist::Parser`
 
-Parse binary plist file and return `Bplist::Any`
+Parse a binary plist file and retrieve a `Bplist::Any` object:
 
 ```crystal
 require "bplist"
