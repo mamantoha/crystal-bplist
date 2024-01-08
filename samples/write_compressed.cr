@@ -32,7 +32,6 @@ hash = {
   "ExampleInteger"      => 42,
   "ExampleTrueBoolean"  => true,
   "ExampleFalseBoolean" => false,
-  "ExampleNil"          => nil,
 }
 
 # 35 objects without compress
@@ -41,3 +40,4 @@ writer = Bplist::Writer.new(hash, true)
 writer.print_objects
 
 writer.write_to_file("#{__DIR__}/../assets/example_mod.plist")
+# plutil -convert xml1 assets/example_mod.plist && cat assets/example_mod.plist
