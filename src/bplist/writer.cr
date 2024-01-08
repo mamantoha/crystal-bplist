@@ -201,7 +201,7 @@ module Bplist
 
       # Convert the time to the number of seconds since the reference date
       reference_date = Time.utc(2001, 1, 1, 0, 0, 0)
-      time_interval = (time.to_unix - reference_date.to_unix).to_f64
+      time_interval = (time.to_utc.to_unix - reference_date.to_unix).to_f64
 
       @io.write_byte(type_marker.to_u8)
       @io.write(time_interval.to_be_bytes)
