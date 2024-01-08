@@ -2,6 +2,8 @@ require "../src/bplist"
 
 Bplist::Writer.debug = true
 
+# plutil -convert binary1 assets/example.xml -o assets/example.plist
+
 #      1
 hash = {
   # 2                    6
