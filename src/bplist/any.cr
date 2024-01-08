@@ -40,7 +40,7 @@ class Bplist::Any
       end
 
       Bplist::Any.new(converted_hash)
-    when ValueType
+    when Bplist::Any::ValueType
       Bplist::Any.new(value)
     when Bplist::Any
       value
