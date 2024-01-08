@@ -21,11 +21,65 @@ Values can be strings, integers, floats, booleans, arrays, hashes (but only with
 
 ## Usage
 
+Convert Crystal hash to bplist format:
+
 ```crystal
 require "bplist"
+
+hash = {
+  "ExampleDictionary" => {
+    "ExampleDate" => Time.parse("2023-04-01 12:00:00 +00:00", "%Y-%m-%d %H:%M:%S %z", Time::Location::UTC),
+    "ExampleArray" => [
+      "Item 1",
+      "Item 2",
+      "Item 3",
+    ],
+  },
+  "ExampleString" => "Hello, world!",
+  "ExampleInteger" => 42,
+  "ExampleBoolean" => true,
+}
+
+writer = Bplist::Writer.new(hash)
+writer.write_to_file("#{__DIR__}/../assets/example_mod.plist")
 ```
 
-TODO: Write usage instructions here
+```sh
+crystal ./samples/write.cr
+```
+
+Rewrite property list files in format XML:
+
+```sh
+plutil -convert xml1 assets/example_mod.plist -o assets/example_mod.xml
+cat assets/example_mod.xml
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>ExampleBoolean</key>
+		<true />
+		<key>ExampleDictionary</key>
+		<dict>
+			<key>ExampleArray</key>
+			<array>
+				<string>Item 1</string>
+				<string>Item 2</string>
+				<string>Item 3</string>
+			</array>
+			<key>ExampleDate</key>
+			<date>2023-04-01T12:00:00Z</date>
+		</dict>
+		<key>ExampleInteger</key>
+		<integer>42</integer>
+		<key>ExampleString</key>
+		<string>Hello, world!</string>
+	</dict>
+</plist>
+```
 
 ## Development
 
