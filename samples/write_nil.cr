@@ -4,7 +4,7 @@ require "../src/bplist"
 Bplist::Writer.debug = true
 
 hash = {
-  "ExampleNil" => nil,
+  "ExampleNil"    => nil,
   "ExampleString" => "nil",
 }
 
