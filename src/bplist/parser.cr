@@ -19,6 +19,11 @@ module Bplist
 
     class_property? debug = false
 
+    def self.parse(value : IO | String)
+      bplist = new(value)
+      bplist.parse
+    end
+
     def initialize(@io : IO)
       buffer = Bytes.new(HEADER_SIZE)
       @io.read(buffer)
