@@ -123,8 +123,86 @@ class Bplist::Any
     self[index_or_key]
   end
 
+  # Checks that the underlying value is `Int`, and returns its value as an `Int32`.
+  # Raises otherwise.
+  def as_i : Int32
+    @raw.as(Int).to_i
+  end
+
+  # Checks that the underlying value is `Int`, and returns its value as an `Int32`.
+  # Returns `nil` otherwise.
+  def as_i? : Int32?
+    as_i if @raw.is_a?(Int)
+  end
+
+  # Checks that the underlying value is `Int`, and returns its value as an `Int64`.
+  # Raises otherwise.
+  def as_i64 : Int64
+    @raw.as(Int).to_i64
+  end
+
+  # Checks that the underlying value is `Int`, and returns its value as an `Int64`.
+  # Returns `nil` otherwise.
+  def as_i64? : Int64?
+    as_i64 if @raw.is_a?(Int64)
+  end
+
+  # Checks that the underlying value is `Float` (or `Int`), and returns its value as an `Float64`.
+  # Raises otherwise.
+  def as_f : Float64
+    case raw = @raw
+    when Int
+      raw.to_f
+    else
+      raw.as(Float64)
+    end
+  end
+
+  # Checks that the underlying value is `Float` (or `Int`), and returns its value as an `Float64`.
+  # Returns `nil` otherwise.
+  def as_f? : Float64?
+    case raw = @raw
+    when Int
+      raw.to_f
+    else
+      raw.as?(Float64)
+    end
+  end
+
+  # Checks that the underlying value is `Float` (or `Int`), and returns its value as an `Float32`.
+  # Raises otherwise.
+  def as_f32 : Float32
+    case raw = @raw
+    when Int
+      raw.to_f32
+    else
+      raw.as(Float).to_f32
+    end
+  end
+
+  # Checks that the underlying value is `Float` (or `Int`), and returns its value as an `Float32`.
+  # Returns `nil` otherwise.
+  def as_f32? : Float32?
+    case raw = @raw
+    when Int
+      raw.to_f32
+    when Float
+      raw.to_f32
+    else
+      nil
+    end
+  end
+
+  # Checks that the underlying value is `String`, and returns its value.
+  # Raises otherwise.
   def as_s : String
     @raw.as(String)
+  end
+
+  # Checks that the underlying value is `String`, and returns its value.
+  # Returns `nil` otherwise.
+  def as_s? : String?
+    as_s if @raw.is_a?(String)
   end
 
   # Checks that the underlying value is `Hash`, and returns its value.
