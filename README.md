@@ -1,6 +1,7 @@
 # crystal-bplist
 
 [![Crystal CI](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml/badge.svg)](https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml)
+[![GitHub release](https://img.shields.io/github/release/mamantoha/crystal-bplist.svg)](https://github.com/mamantoha/crystal-bplist/releases)
 [![Docs](https://img.shields.io/badge/docs-available-brightgreen.svg)](https://mamantoha.github.io/crystal-bplist/)
 [![License](https://img.shields.io/github/license/mamantoha/crystal-bplist.svg)](https://github.com/mamantoha/crystal-bplist/blob/main/LICENSE)
 
@@ -108,10 +109,6 @@ pp result
  "ExampleInteger" => 42,
  "ExampleBoolean" => true}
 ```
-
-## Development
-
-TODO: Write development instructions here
 
 ## Useful links
 
