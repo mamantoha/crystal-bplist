@@ -67,23 +67,23 @@ cat assets/example_mod.xml
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ExampleBoolean</key>
-	<true/>
-	<key>ExampleDictionary</key>
-	<dict>
-		<key>ExampleArray</key>
-		<array>
-			<string>Item 1</string>
-			<string>Item 2</string>
-			<string>Item 3</string>
-		</array>
-		<key>ExampleDate</key>
-		<date>2023-04-01T12:00:00Z</date>
-	</dict>
-	<key>ExampleInteger</key>
-	<integer>42</integer>
-	<key>ExampleString</key>
-	<string>Hello, world!</string>
+  <key>ExampleBoolean</key>
+  <true/>
+  <key>ExampleDictionary</key>
+  <dict>
+    <key>ExampleArray</key>
+    <array>
+      <string>Item 1</string>
+      <string>Item 2</string>
+      <string>Item 3</string>
+    </array>
+    <key>ExampleDate</key>
+    <date>2023-04-01T12:00:00Z</date>
+  </dict>
+  <key>ExampleInteger</key>
+  <integer>42</integer>
+  <key>ExampleString</key>
+  <string>Hello, world!</string>
 </dict>
 </plist>
 ```
