@@ -1,8 +1,7 @@
 Lint/DebugCalls:
   Description: Disallows debug-related calls
   Excluded:
-  - src/bplist/parser.cr
-  - src/bplist/writer.cr
+  - src/bplist/helpers.cr
   - samples/*
   MethodNames:
   - p

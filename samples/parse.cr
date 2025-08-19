@@ -1,6 +1,6 @@
 require "../src/bplist"
 
-# Bplist::Parser.debug = true
+Bplist::Parser.debug = true
 
 # diff -y <(xxd assets/example.plist) <(xxd assets/example_mod.plist)
 

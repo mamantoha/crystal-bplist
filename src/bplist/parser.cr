@@ -1,5 +1,7 @@
 module Bplist
   class Parser
+    include Helpers
+
     HEADER_SIZE                    =  8
     TRAILER_SIZE                   = 32
     TRAILER_OFFSET_SIZE_OFFSET     =  6
@@ -32,12 +34,12 @@ module Bplist
 
       # Read and parse the trailer
       @trailer_info = read_trailer
-      p! @trailer_info if self.class.debug?
+      debug_print(@trailer_info)
 
       # Read the offset table based on the trailer information and store it as an instance variable
       @offsets = read_offset_table
 
-      p! @offsets if self.class.debug?
+      debug_print(@offsets)
     end
 
     def self.new(file_path : String)
