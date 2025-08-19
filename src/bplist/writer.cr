@@ -1,5 +1,7 @@
 module Bplist
   class Writer
+    include Helpers
+
     @offset_table_offset_size : Int32
     @object_ref_size : Int32
 
@@ -25,16 +27,18 @@ module Bplist
       # Size of object references in serialized containers
       # depends on the number of objects in the plist.
       @object_ref_size = count_to_size(@offsets.size)
-      p! @object_ref_size if self.class.debug?
+
+      debug_print(@object_ref_size)
 
       @indexed_list.each_with_index do |element, i|
         serialize_element(element.as(Bplist::Any), i)
       end
 
-      p! @offsets if self.class.debug?
+      debug_print(@offsets)
 
       @offset_table_offset_size = count_to_size(@offsets.max)
-      p! @offset_table_offset_size if self.class.debug?
+
+      debug_print(@offset_table_offset_size)
 
       @offset_table_start = @io.pos
 
