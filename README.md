@@ -113,7 +113,7 @@ pp result
 ## Useful links
 
 - https://medium.com/@karaiskc/understanding-apples-binary-property-list-format-281e6da00dbd
-- https://opensource.apple.com/source/CF/CF-635/CFBinaryPList.c.auto.html
+- https://github.com/opensource-apple/CF/blob/master/CFBinaryPList.c
 - https://docs.python.org/3/library/plistlib.html
 - https://github.com/python/cpython/blob/main/Lib/plistlib.py
 - http://fileformats.archiveteam.org/wiki/Property_List/Binary
