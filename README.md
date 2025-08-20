@@ -55,6 +55,8 @@ writer.write_to_file("#{__DIR__}/../assets/example_mod.plist")
 crystal ./samples/write.cr
 ```
 
+![example.plist](assets/example.plist.png)
+
 Rewrite the property list file in XML format:
 
 ```sh
