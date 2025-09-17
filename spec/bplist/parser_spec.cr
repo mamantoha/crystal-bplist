@@ -62,7 +62,7 @@ describe Bplist::Parser do
     data = original_result.to_h
 
     # Step 3: Modify the data
-    data["ModifiedString"] = "This was modified!"
+    data["ExampleString"] = "This was modified!"
     data["NewInteger"] = 999
     data["NewBoolean"] = false
     data["NewTime"] = Time.utc(2024, 1, 1, 12, 0, 0)
@@ -72,6 +72,11 @@ describe Bplist::Parser do
       nested = data["ExampleDictionary"].as(Hash)
       nested["ModifiedNestedKey"] = "Nested modification"
       nested["NewNestedValue"] = 123
+
+      if nested["ExampleArray"]?.is_a?(Array)
+        array = nested["ExampleArray"].as(Array)
+        array << "Item 4"
+      end
     end
 
     # Step 4: Write to a temporary file
@@ -88,7 +93,7 @@ describe Bplist::Parser do
     modified_data = modified_result.to_h
 
     # Check top-level modifications
-    modified_data["ModifiedString"].should eq("This was modified!")
+    modified_data["ExampleString"].should eq("This was modified!")
     modified_data["NewInteger"].should eq(999)
     modified_data["NewBoolean"].should eq(false)
     modified_data["NewTime"].should eq(Time.utc(2024, 1, 1, 12, 0, 0))
@@ -99,8 +104,13 @@ describe Bplist::Parser do
     nested["ModifiedNestedKey"].should eq("Nested modification")
     nested["NewNestedValue"].should eq(123)
 
+    # Check array modification
+    nested["ExampleArray"].should be_a(Array(Bplist::Any::NativeType))
+    array = nested["ExampleArray"].as(Array(Bplist::Any::NativeType))
+    array.should contain("Item 4")
+    array.size.should eq(4)
+
     # Check that original data is still there
-    modified_data["ExampleString"].should eq("Hello, world!")
     modified_data["ExampleInteger"].should eq(42)
     modified_data["ExampleBoolean"].should eq(true)
 
