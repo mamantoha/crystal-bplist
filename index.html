@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.17.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="bplist">
+
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+  <meta name="repository-name" content="bplist">
+  <title>bplist main</title>
+  <script type="text/javascript">
+  CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          bplist
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent " data-id="bplist/Bplist" data-name="bplist">
+      <a href="Bplist.html">Bplist</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="bplist/Bplist/Any" data-name="bplist::any">
+      <a href="Bplist/Any.html">Any</a>
+      
+        <ul>
+  
+  <li class=" " data-id="bplist/Bplist/Any/NativeType" data-name="bplist::any::nativetype">
+      <a href="Bplist/Any/NativeType.html">NativeType</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Any/Type" data-name="bplist::any::type">
+      <a href="Bplist/Any/Type.html">Type</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Any/ValueType" data-name="bplist::any::valuetype">
+      <a href="Bplist/Any/ValueType.html">ValueType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Error" data-name="bplist::error">
+      <a href="Bplist/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Helpers" data-name="bplist::helpers">
+      <a href="Bplist/Helpers.html">Helpers</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Parser" data-name="bplist::parser">
+      <a href="Bplist/Parser.html">Parser</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Writer" data-name="bplist::writer">
+      <a href="Bplist/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1><a id="crystal-bplist" class="anchor" href="#crystal-bplist">  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>crystal-bplist</h1>
+<p><a href="https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml"><img src="https://github.com/mamantoha/crystal-bplist/actions/workflows/crystal.yml/badge.svg" alt="Crystal CI" /></a>
+<a href="https://github.com/mamantoha/crystal-bplist/releases"><img src="https://img.shields.io/github/release/mamantoha/crystal-bplist.svg" alt="GitHub release" /></a>
+<a href="https://mamantoha.github.io/crystal-bplist/"><img src="https://img.shields.io/badge/docs-available-brightgreen.svg" alt="Docs" /></a>
+<a href="https://github.com/mamantoha/crystal-bplist/blob/main/LICENSE"><img src="https://img.shields.io/github/license/mamantoha/crystal-bplist.svg" alt="License" /></a></p>
+<p>Apple's binary property list format implementation in Crystal.</p>
+<p><code><a href="Bplist.html">Bplist</a></code> module provides an interface for reading and writing the “property list” files used by Apple, primarily on macOS and iOS.
+This module supports only binary plist files.</p>
+<p>Values can be <code>nil</code>, booleans, integers (<code>Int8</code>, <code>Int16</code>, <code>Int32</code>, <code>Int64</code>, <code>Int128</code>), floats (<code>Float32</code>, <code>Float64</code>), strings, <code>Time</code> objects, <code>Bytes</code> (<code>Slice(UInt8)</code>), arrays, or hashes (with string keys only).</p>
+<h2><a id="installation" class="anchor" href="#installation">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Installation</h2>
+<ol>
+<li>
+<p>Add the dependency to your <code>shard.yml</code>:</p>
+<pre><code class="language-yaml">dependencies:
+  bplist:
+    github: mamantoha/crystal-bplist</code></pre>
+</li>
+<li>
+<p>Run <code>shards install</code></p>
+</li>
+</ol>
+<h2><a id="usage" class="anchor" href="#usage">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Usage</h2>
+<h3><a id="bplistwriter" class="anchor" href="#bplistwriter">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a><code><a href="Bplist/Writer.html">Bplist::Writer</a></code></h3>
+<p>Transform a Crystal hash into bplist format:</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;bplist&quot;</span>
+
+hash <span class="o">=</span> {
+  <span class="s">&quot;ExampleDictionary&quot;</span> <span class="o">=&gt;</span> {
+    <span class="s">&quot;ExampleDate&quot;</span> <span class="o">=&gt;</span> <span class="t">Time</span>.parse(<span class="s">&quot;2023-04-01 12:00:00 +00:00&quot;</span>, <span class="s">&quot;%Y-%m-%d %H:%M:%S %z&quot;</span>, <span class="t">Time</span><span class="t">::</span><span class="t">Location</span><span class="t">::</span><span class="t">UTC</span>),
+    <span class="s">&quot;ExampleArray&quot;</span> <span class="o">=&gt;</span> [
+      <span class="s">&quot;Item 1&quot;</span>,
+      <span class="s">&quot;Item 2&quot;</span>,
+      <span class="s">&quot;Item 3&quot;</span>,
+    ],
+  },
+  <span class="s">&quot;ExampleString&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;Hello, world!&quot;</span>,
+  <span class="s">&quot;ExampleInteger&quot;</span> <span class="o">=&gt;</span> <span class="n">42</span>,
+  <span class="s">&quot;ExampleBoolean&quot;</span> <span class="o">=&gt;</span> <span class="n">true</span>,
+}
+
+writer <span class="o">=</span> <span class="t">Bplist</span><span class="t">::</span><span class="t">Writer</span>.new(hash)
+writer.write_to_file(<span class="s">&quot;</span><span class="i">#{</span>__DIR__<span class="i">}</span><span class="s">/../assets/example_mod.plist&quot;</span>)</code></pre>
+<pre><code class="language-sh">crystal ./samples/write.cr</code></pre>
+<p><img src="assets/example.plist.png" alt="example.plist" /></p>
+<p>Rewrite the property list file in XML format:</p>
+<pre><code class="language-sh">plutil -convert xml1 assets/example_mod.plist -o assets/example_mod.xml
+cat assets/example_mod.xml</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+  &lt;key&gt;ExampleBoolean&lt;/key&gt;
+  &lt;true/&gt;
+  &lt;key&gt;ExampleDictionary&lt;/key&gt;
+  &lt;dict&gt;
+    &lt;key&gt;ExampleArray&lt;/key&gt;
+    &lt;array&gt;
+      &lt;string&gt;Item 1&lt;/string&gt;
+      &lt;string&gt;Item 2&lt;/string&gt;
+      &lt;string&gt;Item 3&lt;/string&gt;
+    &lt;/array&gt;
+    &lt;key&gt;ExampleDate&lt;/key&gt;
+    &lt;date&gt;2023-04-01T12:00:00Z&lt;/date&gt;
+  &lt;/dict&gt;
+  &lt;key&gt;ExampleInteger&lt;/key&gt;
+  &lt;integer&gt;42&lt;/integer&gt;
+  &lt;key&gt;ExampleString&lt;/key&gt;
+  &lt;string&gt;Hello, world!&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;</code></pre>
+<h3><a id="bplistparser" class="anchor" href="#bplistparser">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a><code><a href="Bplist/Parser.html">Bplist::Parser</a></code></h3>
+<p>Parse a binary plist file and retrieve a <code><a href="Bplist/Any.html">Bplist::Any</a></code> object:</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;bplist&quot;</span>
+
+bplist <span class="o">=</span> <span class="t">Bplist</span><span class="t">::</span><span class="t">Parser</span>.new(<span class="s">&quot;</span><span class="i">#{</span>__DIR__<span class="i">}</span><span class="s">/../assets/example.plist&quot;</span>)
+
+result <span class="o">=</span> bplist.parse
+pp result</code></pre>
+<pre><code class="language-crystal">{&quot;ExampleDictionary&quot; =&gt;
+  {&quot;ExampleDate&quot; =&gt; 2023-04-01 12:00:00.0 UTC,
+   &quot;ExampleArray&quot; =&gt; [&quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;]},
+ &quot;ExampleString&quot; =&gt; &quot;Hello, world!&quot;,
+ &quot;ExampleInteger&quot; =&gt; 42,
+ &quot;ExampleBoolean&quot; =&gt; true}</code></pre>
+<h3><a id="reading-and-modifying-plist" class="anchor" href="#reading-and-modifying-plist">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Reading and modifying Plist</h3>
+<p>The <code><a href="Bplist/Any.html">Bplist::Any</a></code> object returned by the parser is immutable. To modify plist data, you need to convert it to native Crystal types first.</p>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;bplist&quot;</span>
+
+<span class="c"># Read the plist file</span>
+bplist <span class="o">=</span> <span class="t">Bplist</span><span class="t">::</span><span class="t">Parser</span>.new(<span class="s">&quot;config.plist&quot;</span>)
+result <span class="o">=</span> bplist.parse <span class="c"># Bplist::Any (immutable)</span>
+
+<span class="c"># Convert to modifiable Hash</span>
+data <span class="o">=</span> result.to_h <span class="c"># Hash(String, Bplist::Any::NativeType) - mutable</span>
+
+<span class="c"># Modify the data</span>
+data[<span class="s">&quot;last_modified&quot;</span>] <span class="o">=</span> <span class="t">Time</span>.utc
+data[<span class="s">&quot;version&quot;</span>] <span class="o">=</span> (data[<span class="s">&quot;version&quot;</span>]?.<span class="k">as</span>(<span class="t">Int32</span>) <span class="o">||</span> <span class="n">0</span>) <span class="o">+</span> <span class="n">1</span>
+data[<span class="s">&quot;new_key&quot;</span>] <span class="o">=</span> <span class="s">&quot;new_value&quot;</span>
+
+<span class="c"># Access and modify nested structures</span>
+<span class="k">if</span> data[<span class="s">&quot;settings&quot;</span>]?.<span class="k">is_a?</span>(<span class="t">Hash</span>)
+  settings <span class="o">=</span> data[<span class="s">&quot;settings&quot;</span>].<span class="k">as</span>(<span class="t">Hash</span>)
+  settings[<span class="s">&quot;theme&quot;</span>] <span class="o">=</span> <span class="s">&quot;dark&quot;</span>
+  settings[<span class="s">&quot;notifications&quot;</span>] <span class="o">=</span> <span class="n">true</span>
+<span class="k">else</span>
+  <span class="c"># Create new nested structure</span>
+  data[<span class="s">&quot;settings&quot;</span>] <span class="o">=</span> {
+    <span class="s">&quot;theme&quot;</span> <span class="o">=&gt;</span> <span class="s">&quot;dark&quot;</span>,
+    <span class="s">&quot;notifications&quot;</span> <span class="o">=&gt;</span> <span class="n">true</span>,
+    <span class="s">&quot;auto_save&quot;</span> <span class="o">=&gt;</span> <span class="n">false</span>
+  }
+<span class="k">end</span>
+
+<span class="c"># Write the modified data back to file</span>
+writer <span class="o">=</span> <span class="t">Bplist</span><span class="t">::</span><span class="t">Writer</span>.new(data)
+writer.write_to_file(<span class="s">&quot;config.plist&quot;</span>)</code></pre>
+<h2><a id="useful-links" class="anchor" href="#useful-links">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Useful links</h2>
+<ul>
+<li>https://medium.com/@karaiskc/understanding-apples-binary-property-list-format-281e6da00dbd</li>
+<li>https://github.com/opensource-apple/CF/blob/master/CFBinaryPList.c</li>
+<li>https://docs.python.org/3/library/plistlib.html</li>
+<li>https://github.com/python/cpython/blob/main/Lib/plistlib.py</li>
+<li>http://fileformats.archiveteam.org/wiki/Property_List/Binary</li>
+</ul>
+<h2><a id="contributing" class="anchor" href="#contributing">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributing</h2>
+<ol>
+<li>Fork it (<a href="https://github.com/mamantoha/crystal-bplist/fork">https://github.com/mamantoha/crystal-bplist/fork</a>)</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+<h2><a id="contributors" class="anchor" href="#contributors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Contributors</h2>
+<ul>
+<li><a href="https://github.com/mamantoha">Anton Maminov</a> - creator and maintainer</li>
+</ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.17.1">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="bplist">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="bplist">
+  <title>Bplist::Any - bplist main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          bplist
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="bplist/Bplist" data-name="bplist">
+      <a href="../Bplist.html">Bplist</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="bplist/Bplist/Any" data-name="bplist::any">
+      <a href="../Bplist/Any.html">Any</a>
+      
+        <ul>
+  
+  <li class=" " data-id="bplist/Bplist/Any/NativeType" data-name="bplist::any::nativetype">
+      <a href="../Bplist/Any/NativeType.html">NativeType</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Any/Type" data-name="bplist::any::type">
+      <a href="../Bplist/Any/Type.html">Type</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Any/ValueType" data-name="bplist::any::valuetype">
+      <a href="../Bplist/Any/ValueType.html">ValueType</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Error" data-name="bplist::error">
+      <a href="../Bplist/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Helpers" data-name="bplist::helpers">
+      <a href="../Bplist/Helpers.html">Helpers</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Parser" data-name="bplist::parser">
+      <a href="../Bplist/Parser.html">Parser</a>
+      
+    </li>
+  
+  <li class=" " data-id="bplist/Bplist/Writer" data-name="bplist::writer">
+      <a href="../Bplist/Writer.html">Writer</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    class
+  </span> Bplist::<wbr>Any
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Bplist/Any.html">Bplist::Any</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L1" target="_blank">
+        bplist/any.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28raw%3AType%29-class-method" class="signature"><strong>.new</strong>(raw : Type)</a>
+        
+          <div class="summary"><p>Creates a <code><a href="../Bplist/Any.html">Bplist::Any</a></code> that wraps the given value.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+  
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#convert%28value%3A_%29%3ABplist%3A%3AAny-class-method" class="signature"><strong>.convert</strong>(value : _) : Bplist::Any</a>
+        
+          <div class="summary"><p>Method to convert a value to the <code><a href="../Bplist/Any.html">Bplist::Any</a></code> type</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%3ABplist%3A%3AAny%29-instance-method" class="signature"><strong>#==</strong>(other : Bplist::Any)</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if both <code>self</code> and <em>other</em>'s raw object are equal.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%3D%3D%28other%29-instance-method" class="signature"><strong>#==</strong>(other)</a>
+        
+          <div class="summary"><p>Returns <code>true</code> if the raw object is equal to <em>other</em>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28index%3AInt%29%3ABplist%3A%3AAny-instance-method" class="signature"><strong>#[]</strong>(index : Int) : Bplist::Any</a>
+        
+          <div class="summary"><p>Assumes the underlying value is an <code>Array</code> and returns the element at the given index.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%28key%3AString%29%3ABplist%3A%3AAny-instance-method" class="signature"><strong>#[]</strong>(key : String) : Bplist::Any</a>
+        
+          <div class="summary"><p>Assumes the underlying value is a <code>Hash</code> and returns the element with the given key.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%3F%28index%3AInt%29%3ABplist%3A%3AAny%7CNil-instance-method" class="signature"><strong>#[]?</strong>(index : Int) : Bplist::Any | Nil</a>
+        
+          <div class="summary"><p>Assumes the underlying value is an <code>Array</code> and returns the element at the given index, or <code>nil</code> if out of bounds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%3F%28key%3AString%29%3ABplist%3A%3AAny%7CNil-instance-method" class="signature"><strong>#[]?</strong>(key : String) : Bplist::Any | Nil</a>
+        
+          <div class="summary"><p>Assumes the underlying value is a <code>Hash</code> and returns the element with the given key, or <code>nil</code> if the key is not present.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_a%3AArray%28Bplist%3A%3AAny%29-instance-method" class="signature"><strong>#as_a</strong> : Array(Bplist::Any)</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Array</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_a%3F%3AArray%28Bplist%3A%3AAny%29%7CNil-instance-method" class="signature"><strong>#as_a?</strong> : Array(Bplist::Any) | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Array</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_bytes%3ASlice%28UInt8%29-instance-method" class="signature"><strong>#as_bytes</strong> : Slice(UInt8)</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Slice(UInt8)</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_bytes%3F%3ASlice%28UInt8%29%7CNil-instance-method" class="signature"><strong>#as_bytes?</strong> : Slice(UInt8) | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Slice(UInt8)</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_f%3AFloat64-instance-method" class="signature"><strong>#as_f</strong> : Float64</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float64</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_f32%3AFloat32-instance-method" class="signature"><strong>#as_f32</strong> : Float32</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float32</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_f32%3F%3AFloat32%7CNil-instance-method" class="signature"><strong>#as_f32?</strong> : Float32 | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float32</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_f%3F%3AFloat64%7CNil-instance-method" class="signature"><strong>#as_f?</strong> : Float64 | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float64</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_h%3AHash%28String%2CBplist%3A%3AAny%29-instance-method" class="signature"><strong>#as_h</strong> : Hash(String, Bplist::Any)</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Hash</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_i%3AInt32-instance-method" class="signature"><strong>#as_i</strong> : Int32</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int32</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_i64%3AInt64-instance-method" class="signature"><strong>#as_i64</strong> : Int64</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int64</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_i64%3F%3AInt64%7CNil-instance-method" class="signature"><strong>#as_i64?</strong> : Int64 | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int64</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_i%3F%3AInt32%7CNil-instance-method" class="signature"><strong>#as_i?</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int32</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_s%3AString-instance-method" class="signature"><strong>#as_s</strong> : String</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>String</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#as_s%3F%3AString%7CNil-instance-method" class="signature"><strong>#as_s?</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Checks that the underlying value is <code>String</code>, and returns its value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dig%28index_or_key%3AString%7CInt%2C%2Asubkeys%29%3ABplist%3A%3AAny-instance-method" class="signature"><strong>#dig</strong>(index_or_key : String | Int, *subkeys) : Bplist::Any</a>
+        
+          <div class="summary"><p>Traverses the depth of a structure and returns the value, otherwise raises.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#dig%3F%28index_or_key%3AString%7CInt%2C%2Asubkeys%29%3ABplist%3A%3AAny%7CNil-instance-method" class="signature"><strong>#dig?</strong>(index_or_key : String | Int, *subkeys) : Bplist::Any | Nil</a>
+        
+          <div class="summary"><p>Traverses the depth of a structure and returns the value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#hash%28hasher%29-instance-method" class="signature"><strong>#hash</strong>(hasher)</a>
+        
+          <div class="summary"><p>See <code>Object#hash(hasher)</code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#inspect%28io%3AIO%29%3ANil-instance-method" class="signature"><strong>#inspect</strong>(io : IO) : Nil</a>
+        
+          <div class="summary"><p>Appends a String representation of this object which includes its class name, its object address and the values of all instance variables.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pretty_print%28pp%29-instance-method" class="signature"><strong>#pretty_print</strong>(pp)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw%3AType-instance-method" class="signature"><strong>#raw</strong> : Type</a>
+        
+          <div class="summary"><p>Returns the raw underlying value.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_a-instance-method" class="signature"><strong>#to_a</strong></a>
+        
+          <div class="summary"><p>Converts the Bplist::Any to a regular Crystal Array that can be modified.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_any-instance-method" class="signature"><strong>#to_any</strong></a>
+        
+          <div class="summary"><p>Converts the Bplist::Any to its native Crystal type.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_h-instance-method" class="signature"><strong>#to_h</strong></a>
+        
+          <div class="summary"><p>Converts the Bplist::Any to a regular Crystal Hash that can be modified.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%3AIO%29%3ANil-instance-method" class="signature"><strong>#to_s</strong>(io : IO) : Nil</a>
+        
+          <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(raw:Type)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(raw : <a href="../Bplist/Any/Type.html">Type</a>)
+
+        <a class="method-permalink" href="#new%28raw%3AType%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Creates a <code><a href="../Bplist/Any.html">Bplist::Any</a></code> that wraps the given value.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L25" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+  
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="convert(value:_):Bplist::Any-class-method">
+      <div class="signature">
+        
+        def self.<strong>convert</strong>(value : _) : <a href="../Bplist/Any.html">Bplist::Any</a>
+
+        <a class="method-permalink" href="#convert%28value%3A_%29%3ABplist%3A%3AAny-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Method to convert a value to the <code><a href="../Bplist/Any.html">Bplist::Any</a></code> type</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="==(other:Bplist::Any)-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other : <a href="../Bplist/Any.html">Bplist::Any</a>)
+
+        <a class="method-permalink" href="#%3D%3D%28other%3ABplist%3A%3AAny%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if both <code>self</code> and <em>other</em>'s raw object are equal.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L305" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="==(other)-instance-method">
+      <div class="signature">
+        
+        def <strong>==</strong>(other)
+
+        <a class="method-permalink" href="#%3D%3D%28other%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> if the raw object is equal to <em>other</em>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L310" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[](index:Int):Bplist::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(index : Int) : <a href="../Bplist/Any.html">Bplist::Any</a>
+
+        <a class="method-permalink" href="#%5B%5D%28index%3AInt%29%3ABplist%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Assumes the underlying value is an <code>Array</code> and returns the element
+at the given index.
+Raises if the underlying value is not an <code>Array</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[](key:String):Bplist::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>[]</strong>(key : String) : <a href="../Bplist/Any.html">Bplist::Any</a>
+
+        <a class="method-permalink" href="#%5B%5D%28key%3AString%29%3ABplist%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Assumes the underlying value is a <code>Hash</code> and returns the element
+with the given key.
+Raises if the underlying value is not a <code>Hash</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L82" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]?(index:Int):Bplist::Any|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>[]?</strong>(index : Int) : <a href="../Bplist/Any.html">Bplist::Any</a> | Nil
+
+        <a class="method-permalink" href="#%5B%5D%3F%28index%3AInt%29%3ABplist%3A%3AAny%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Assumes the underlying value is an <code>Array</code> and returns the element
+at the given index, or <code>nil</code> if out of bounds.
+Raises if the underlying value is not an <code>Array</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L70" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="[]?(key:String):Bplist::Any|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>[]?</strong>(key : String) : <a href="../Bplist/Any.html">Bplist::Any</a> | Nil
+
+        <a class="method-permalink" href="#%5B%5D%3F%28key%3AString%29%3ABplist%3A%3AAny%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Assumes the underlying value is a <code>Hash</code> and returns the element
+with the given key, or <code>nil</code> if the key is not present.
+Raises if the underlying value is not a <code>Hash</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L94" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_a:Array(Bplist::Any)-instance-method">
+      <div class="signature">
+        
+        def <strong>as_a</strong> : Array(<a href="../Bplist/Any.html">Bplist::Any</a>)
+
+        <a class="method-permalink" href="#as_a%3AArray%28Bplist%3A%3AAny%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Array</code>, and returns its value.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L231" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_a?:Array(Bplist::Any)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_a?</strong> : Array(<a href="../Bplist/Any.html">Bplist::Any</a>) | Nil
+
+        <a class="method-permalink" href="#as_a%3F%3AArray%28Bplist%3A%3AAny%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Array</code>, and returns its value.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L237" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_bytes:Slice(UInt8)-instance-method">
+      <div class="signature">
+        
+        def <strong>as_bytes</strong> : Slice(UInt8)
+
+        <a class="method-permalink" href="#as_bytes%3ASlice%28UInt8%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Slice(UInt8)</code>, and returns its value.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L213" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_bytes?:Slice(UInt8)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_bytes?</strong> : Slice(UInt8) | Nil
+
+        <a class="method-permalink" href="#as_bytes%3F%3ASlice%28UInt8%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Slice(UInt8)</code>, and returns its value.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L219" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_f:Float64-instance-method">
+      <div class="signature">
+        
+        def <strong>as_f</strong> : Float64
+
+        <a class="method-permalink" href="#as_f%3AFloat64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float64</code>.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_f32:Float32-instance-method">
+      <div class="signature">
+        
+        def <strong>as_f32</strong> : Float32
+
+        <a class="method-permalink" href="#as_f32%3AFloat32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float32</code>.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L177" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_f32?:Float32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_f32?</strong> : Float32 | Nil
+
+        <a class="method-permalink" href="#as_f32%3F%3AFloat32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float32</code>.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L188" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_f?:Float64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_f?</strong> : Float64 | Nil
+
+        <a class="method-permalink" href="#as_f%3F%3AFloat64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Float</code> (or <code>Int</code>), and returns its value as an <code>Float64</code>.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L166" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_h:Hash(String,Bplist::Any)-instance-method">
+      <div class="signature">
+        
+        def <strong>as_h</strong> : Hash(String, <a href="../Bplist/Any.html">Bplist::Any</a>)
+
+        <a class="method-permalink" href="#as_h%3AHash%28String%2CBplist%3A%3AAny%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Hash</code>, and returns its value.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L225" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_i:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>as_i</strong> : Int32
+
+        <a class="method-permalink" href="#as_i%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int32</code>.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L131" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_i64:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>as_i64</strong> : Int64
+
+        <a class="method-permalink" href="#as_i64%3AInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int64</code>.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L143" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_i64?:Int64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_i64?</strong> : Int64 | Nil
+
+        <a class="method-permalink" href="#as_i64%3F%3AInt64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int64</code>.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L149" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_i?:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_i?</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#as_i%3F%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>Int</code>, and returns its value as an <code>Int32</code>.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L137" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_s:String-instance-method">
+      <div class="signature">
+        
+        def <strong>as_s</strong> : String
+
+        <a class="method-permalink" href="#as_s%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>String</code>, and returns its value.
+Raises otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L201" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="as_s?:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>as_s?</strong> : String | Nil
+
+        <a class="method-permalink" href="#as_s%3F%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Checks that the underlying value is <code>String</code>, and returns its value.
+Returns <code>nil</code> otherwise.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L207" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dig(index_or_key:String|Int,*subkeys):Bplist::Any-instance-method">
+      <div class="signature">
+        
+        def <strong>dig</strong>(index_or_key : String | Int, *subkeys) : <a href="../Bplist/Any.html">Bplist::Any</a>
+
+        <a class="method-permalink" href="#dig%28index_or_key%3AString%7CInt%2C%2Asubkeys%29%3ABplist%3A%3AAny-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Traverses the depth of a structure and returns the value, otherwise raises.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L120" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="dig?(index_or_key:String|Int,*subkeys):Bplist::Any|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>dig?</strong>(index_or_key : String | Int, *subkeys) : <a href="../Bplist/Any.html">Bplist::Any</a> | Nil
+
+        <a class="method-permalink" href="#dig%3F%28index_or_key%3AString%7CInt%2C%2Asubkeys%29%3ABplist%3A%3AAny%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Traverses the depth of a structure and returns the value.
+Returns <code>nil</code> if not found.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L105" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="hash(hasher)-instance-method">
+      <div class="signature">
+        
+        def <strong>hash</strong>(hasher)
+
+        <a class="method-permalink" href="#hash%28hasher%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>See <code>Object#hash(hasher)</code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L314" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="inspect(io:IO):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>inspect</strong>(io : IO) : Nil
+
+        <a class="method-permalink" href="#inspect%28io%3AIO%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Appends a String representation of this object
+which includes its class name, its object address
+and the values of all instance variables.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).inspect <span class="c"># =&gt; #&lt;Person:0x10fd31f20 @name=&quot;John&quot;, @age=32&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L292" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pretty_print(pp)-instance-method">
+      <div class="signature">
+        
+        def <strong>pretty_print</strong>(pp)
+
+        <a class="method-permalink" href="#pretty_print%28pp%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L300" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw:Type-instance-method">
+      <div class="signature">
+        
+        def <strong>raw</strong> : <a href="../Bplist/Any/Type.html">Type</a>
+
+        <a class="method-permalink" href="#raw%3AType-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the raw underlying value.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_a-instance-method">
+      <div class="signature">
+        
+        def <strong>to_a</strong>
+
+        <a class="method-permalink" href="#to_a-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts the Bplist::Any to a regular Crystal Array that can be modified.
+Recursively converts nested Bplist::Any objects to their native types.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L258" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_any-instance-method">
+      <div class="signature">
+        
+        def <strong>to_any</strong>
+
+        <a class="method-permalink" href="#to_any-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts the Bplist::Any to its native Crystal type.
+Recursively converts nested Bplist::Any objects to their native types.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L273" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_h-instance-method">
+      <div class="signature">
+        
+        def <strong>to_h</strong>
+
+        <a class="method-permalink" href="#to_h-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts the Bplist::Any to a regular Crystal Hash that can be modified.
+Recursively converts nested Bplist::Any objects to their native types.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L243" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO) : Nil
+
+        <a class="method-permalink" href="#to_s%28io%3AIO%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Appends a short String representation of this object
+which includes its class name and its object address.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="t">Person</span>.new(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/mamantoha/crystal-bplist/blob/fd885be48eafe888ea4de58dd97580071a15f2f0/src/bplist/any.cr#L296" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>
