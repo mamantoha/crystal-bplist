@@ -7,7 +7,7 @@
 
 Apple's binary property list format implementation in Crystal.
 
-`bplist` module provides an interface for reading and writing the “property list” files used by Apple, primarily on macOS and iOS.
+`Bplist` module provides an interface for reading and writing the “property list” files used by Apple, primarily on macOS and iOS.
 This module supports only binary plist files.
 
 Values can be strings, integers, floats, booleans, arrays, hashes (but only with string keys), `Bytes`, or `Time` objects.
