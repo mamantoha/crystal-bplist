@@ -21,7 +21,7 @@ module Bplist
 
     class_property? debug = false
 
-    def self.parse(value : IO | String)
+    def self.parse(value : IO | String | Bytes)
       bplist = new(value)
       bplist.parse
     end
@@ -46,6 +46,11 @@ module Bplist
       file = File.open(file_path, "r")
 
       new(file)
+    end
+
+    def self.new(bytes : Bytes)
+      io = IO::Memory.new(bytes)
+      new(io)
     end
 
     def parse
