@@ -24,6 +24,8 @@ describe Bplist::Writer do
       IO.copy(file, io)
     end
 
-    writer.io.to_slice.should eq(io.to_slice)
+    bytes = writer.io.to_slice
+
+    bytes.should eq(io.to_slice)
   end
 end
