@@ -15,6 +15,9 @@ class Bplist::Any
                     Time |
                     Slice(UInt8)
 
+  # Native Crystal types for conversion
+  alias ConvertedType = ValueType | Array(ConvertedType) | Hash(String, ConvertedType)
+
   # Returns the raw underlying value.
   getter raw : Type
 
@@ -233,6 +236,57 @@ class Bplist::Any
   # Returns `nil` otherwise.
   def as_a? : Array(Bplist::Any)?
     @raw.as?(Array)
+  end
+
+  # Converts the Bplist::Any to a regular Crystal Hash that can be modified.
+  # Recursively converts nested Bplist::Any objects to their native types.
+  def to_hash
+    case @raw
+    when Hash
+      result = {} of String => ConvertedType
+      @raw.as(Hash).each do |key, value|
+        result[key] = value.to_any.as(ConvertedType)
+      end
+      result
+    else
+      raise Bplist::Error.new("Expected Hash for #to_hash, not #{@raw.class}")
+    end
+  end
+
+  # Converts the Bplist::Any to a regular Crystal Array that can be modified.
+  # Recursively converts nested Bplist::Any objects to their native types.
+  def to_array
+    case @raw
+    when Array
+      result = [] of ConvertedType
+      @raw.as(Array).each do |item|
+        result << item.to_any.as(ConvertedType)
+      end
+      result
+    else
+      raise Bplist::Error.new("Expected Array for #to_array, not #{@raw.class}")
+    end
+  end
+
+  # Converts the Bplist::Any to its native Crystal type.
+  # Recursively converts nested Bplist::Any objects to their native types.
+  def to_any
+    case @raw
+    when Hash
+      result = {} of String => ConvertedType
+      @raw.as(Hash).each do |key, value|
+        result[key] = value.to_any.as(ConvertedType)
+      end
+      result
+    when Array
+      result = [] of ConvertedType
+      @raw.as(Array).each do |item|
+        result << item.to_any.as(ConvertedType)
+      end
+      result
+    else
+      @raw
+    end
   end
 
   def inspect(io : IO) : Nil
