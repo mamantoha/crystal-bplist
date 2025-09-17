@@ -205,6 +205,18 @@ class Bplist::Any
     as_s if @raw.is_a?(String)
   end
 
+  # Checks that the underlying value is `Slice(UInt8)`, and returns its value.
+  # Raises otherwise.
+  def as_bytes : Slice(UInt8)
+    @raw.as(Slice(UInt8))
+  end
+
+  # Checks that the underlying value is `Slice(UInt8)`, and returns its value.
+  # Returns `nil` otherwise.
+  def as_bytes? : Slice(UInt8)?
+    as_bytes if @raw.is_a?(Slice(UInt8))
+  end
+
   # Checks that the underlying value is `Hash`, and returns its value.
   # Raises otherwise.
   def as_h : Hash(String, Bplist::Any)
