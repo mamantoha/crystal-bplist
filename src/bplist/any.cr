@@ -16,7 +16,7 @@ class Bplist::Any
                     Slice(UInt8)
 
   # Native Crystal types for conversion
-  alias ConvertedType = ValueType | Array(ConvertedType) | Hash(String, ConvertedType)
+  alias NativeType = ValueType | Array(NativeType) | Hash(String, NativeType)
 
   # Returns the raw underlying value.
   getter raw : Type
@@ -243,9 +243,9 @@ class Bplist::Any
   def to_h
     case @raw
     when Hash
-      result = {} of String => ConvertedType
+      result = {} of String => NativeType
       @raw.as(Hash).each do |key, value|
-        result[key] = value.to_any.as(ConvertedType)
+        result[key] = value.to_any.as(NativeType)
       end
       result
     else
@@ -258,9 +258,9 @@ class Bplist::Any
   def to_a
     case @raw
     when Array
-      result = [] of ConvertedType
+      result = [] of NativeType
       @raw.as(Array).each do |item|
-        result << item.to_any.as(ConvertedType)
+        result << item.to_any.as(NativeType)
       end
       result
     else
@@ -273,15 +273,15 @@ class Bplist::Any
   def to_any
     case @raw
     when Hash
-      result = {} of String => ConvertedType
+      result = {} of String => NativeType
       @raw.as(Hash).each do |key, value|
-        result[key] = value.to_any.as(ConvertedType)
+        result[key] = value.to_any.as(NativeType)
       end
       result
     when Array
-      result = [] of ConvertedType
+      result = [] of NativeType
       @raw.as(Array).each do |item|
-        result << item.to_any.as(ConvertedType)
+        result << item.to_any.as(NativeType)
       end
       result
     else
