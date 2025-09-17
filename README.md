@@ -112,6 +112,44 @@ pp result
  "ExampleBoolean" => true}
 ```
 
+### Reading and modifying Plist
+
+The `Bplist::Any` object returned by the parser is immutable. To modify plist data, you need to convert it to native Crystal types first.
+
+```crystal
+require "bplist"
+
+# Read the plist file
+bplist = Bplist::Parser.new("config.plist")
+result = bplist.parse # Bplist::Any (immutable)
+
+# Convert to modifiable Hash
+data = result.to_h # Hash(String, Bplist::Any::NativeType) - mutable
+
+# Modify the data
+data["last_modified"] = Time.utc
+data["version"] = (data["version"]?.as(Int32) || 0) + 1
+data["new_key"] = "new_value"
+
+# Access and modify nested structures
+if data["settings"]?.is_a?(Hash)
+  settings = data["settings"].as(Hash)
+  settings["theme"] = "dark"
+  settings["notifications"] = true
+else
+  # Create new nested structure
+  data["settings"] = {
+    "theme" => "dark",
+    "notifications" => true,
+    "auto_save" => false
+  }
+end
+
+# Write the modified data back to file
+writer = Bplist::Writer.new(data)
+writer.write_to_file("config.plist")
+```
+
 ## Useful links
 
 - https://medium.com/@karaiskc/understanding-apples-binary-property-list-format-281e6da00dbd
