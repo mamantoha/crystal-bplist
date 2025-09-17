@@ -240,7 +240,7 @@ class Bplist::Any
 
   # Converts the Bplist::Any to a regular Crystal Hash that can be modified.
   # Recursively converts nested Bplist::Any objects to their native types.
-  def to_hash
+  def to_h
     case @raw
     when Hash
       result = {} of String => ConvertedType
@@ -249,13 +249,13 @@ class Bplist::Any
       end
       result
     else
-      raise Bplist::Error.new("Expected Hash for #to_hash, not #{@raw.class}")
+      raise Bplist::Error.new("Expected Hash for #to_h, not #{@raw.class}")
     end
   end
 
   # Converts the Bplist::Any to a regular Crystal Array that can be modified.
   # Recursively converts nested Bplist::Any objects to their native types.
-  def to_array
+  def to_a
     case @raw
     when Array
       result = [] of ConvertedType
@@ -264,7 +264,7 @@ class Bplist::Any
       end
       result
     else
-      raise Bplist::Error.new("Expected Array for #to_array, not #{@raw.class}")
+      raise Bplist::Error.new("Expected Array for #to_a, not #{@raw.class}")
     end
   end
 

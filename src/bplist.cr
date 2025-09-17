@@ -8,7 +8,7 @@ module Bplist
   class Error < Exception
   end
 
-  def self.parse(input)
+  def self.parse(input) : Bplist::Any
     Parser.new(input).parse
   end
 end

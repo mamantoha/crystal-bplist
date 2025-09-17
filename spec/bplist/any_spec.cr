@@ -1,7 +1,7 @@
 require "../spec_helper"
 
 describe Bplist::Any do
-  describe "#to_hash" do
+  describe "#to_h" do
     it "converts a hash to a modifiable Crystal Hash" do
       original_hash = {
         "string"  => "value",
@@ -13,7 +13,7 @@ describe Bplist::Any do
       }
 
       bplist_any = Bplist::Any.convert(original_hash)
-      converted_hash = bplist_any.to_hash
+      converted_hash = bplist_any.to_h
 
       # Should contain the same data
       converted_hash["string"].should eq("value")
@@ -34,13 +34,13 @@ describe Bplist::Any do
     it "raises error when called on non-hash" do
       bplist_any = Bplist::Any.convert("not a hash")
 
-      expect_raises(Bplist::Error, "Expected Hash for #to_hash, not String") do
-        bplist_any.to_hash
+      expect_raises(Bplist::Error, "Expected Hash for #to_h, not String") do
+        bplist_any.to_h
       end
     end
   end
 
-  describe "#to_array" do
+  describe "#to_a" do
     it "converts an array to a modifiable Crystal Array" do
       original_array = [
         "string",
@@ -50,7 +50,7 @@ describe Bplist::Any do
       ]
 
       bplist_any = Bplist::Any.convert(original_array)
-      converted_array = bplist_any.to_array
+      converted_array = bplist_any.to_a
 
       # Should contain the same data
       converted_array[0].should eq("string")
@@ -71,8 +71,8 @@ describe Bplist::Any do
     it "raises error when called on non-array" do
       bplist_any = Bplist::Any.convert("not an array")
 
-      expect_raises(Bplist::Error, "Expected Array for #to_array, not String") do
-        bplist_any.to_array
+      expect_raises(Bplist::Error, "Expected Array for #to_a, not String") do
+        bplist_any.to_a
       end
     end
   end

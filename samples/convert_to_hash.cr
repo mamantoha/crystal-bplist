@@ -10,7 +10,7 @@ pp result
 puts "\n" + "="*50 + "\n"
 
 # Convert to a modifiable Crystal Hash
-modifiable_hash = result.to_hash
+modifiable_hash = result.to_h
 
 puts "Converted to modifiable Hash:"
 pp modifiable_hash

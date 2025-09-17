@@ -21,7 +21,7 @@ module Bplist
 
     class_property? debug = false
 
-    def self.parse(value : IO | String | Bytes)
+    def self.parse(value : IO | String | Bytes) : Bplist::Any
       bplist = new(value)
       bplist.parse
     end
@@ -53,7 +53,7 @@ module Bplist
       new(io)
     end
 
-    def parse
+    def parse : Bplist::Any
       # Fetch the offset of the top object
       top_object_offset = @offsets[@trailer_info[:top_object].to_i]
 
