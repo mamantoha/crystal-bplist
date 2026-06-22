@@ -3,7 +3,7 @@ module Bplist
     extend self
 
     def debug_print(object)
-      p! object if self.class.debug?
+      debug!(object) if self.class.debug?
     end
   end
 end

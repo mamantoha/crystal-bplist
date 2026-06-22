@@ -9,5 +9,7 @@ crystal: '>= 1.0.0'
 dependencies:
   bytes_ext:
     github: mamantoha/bytes_ext
+  debug:
+    github: Sija/debug.cr
 
 license: MIT

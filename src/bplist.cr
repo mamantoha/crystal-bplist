@@ -1,4 +1,5 @@
 require "bytes_ext"
+require "debug"
 require "./bplist/*"
 
 module Bplist
