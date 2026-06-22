@@ -175,6 +175,56 @@ describe Bplist::Writer do
     object_count(compressed).should be < object_count(uncompressed)
   end
 
+  it "round-trips compressed nested arrays and hashes" do
+    hash = {
+      "first" => {
+        "name"  => "same value",
+        "items" => ["same value", "same value", 42],
+      },
+      "second" => {
+        "name"  => "same value",
+        "items" => ["same value", "same value", 42],
+      },
+    }
+
+    writer = Bplist::Writer.new(hash, true)
+
+    Bplist::Parser.parse(writer.io.to_slice).to_h.should eq(hash)
+  end
+
+  it "deduplicates repeated nested scalar values in compressed output" do
+    hash = {
+      "first" => {
+        "name"  => "same value",
+        "items" => ["same value", "same value", 42],
+      },
+      "second" => {
+        "name"  => "same value",
+        "items" => ["same value", "same value", 42],
+      },
+    }
+
+    uncompressed = Bplist::Writer.new(hash, false).io.to_slice
+    compressed = Bplist::Writer.new(hash, true).io.to_slice
+
+    object_count(compressed).should be < object_count(uncompressed)
+  end
+
+  it "round-trips compressed duplicate keys in nested hashes" do
+    hash = {
+      "first" => {
+        "shared_key" => "first value",
+      },
+      "second" => {
+        "shared_key" => "second value",
+      },
+    }
+
+    writer = Bplist::Writer.new(hash, true)
+
+    Bplist::Parser.parse(writer.io.to_slice).to_h.should eq(hash)
+  end
+
   it "writes to a file" do
     hash = {
       "value" => "written",
