@@ -44,7 +44,7 @@ describe Bplist::Any do
         },
       })
 
-      bplist_any.dig("nested", "array", 0).should eq(nil)
+      bplist_any.dig("nested", "array", 0).should be_nil
       bplist_any.dig?("nested", "array", 0).should eq(Bplist::Any.convert(nil))
     end
   end
