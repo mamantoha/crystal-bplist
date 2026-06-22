@@ -5,6 +5,10 @@ private def round_trip(hash)
   Bplist::Parser.parse(writer.io.to_slice).to_h
 end
 
+private def object_count(bytes : Bytes) : UInt64
+  UInt64.from_be_bytes(bytes[bytes.size - 24, 8])
+end
+
 describe Bplist::Writer do
   it "writes" do
     hash = {
@@ -85,5 +89,45 @@ describe Bplist::Writer do
     }
 
     round_trip(hash).should eq(hash)
+  end
+
+  it "round-trips compressed output" do
+    hash = {
+      "first"  => "same value",
+      "second" => "same value",
+      "array"  => ["same value", "same value"],
+    }
+
+    writer = Bplist::Writer.new(hash, true)
+
+    Bplist::Parser.parse(writer.io.to_slice).to_h.should eq(hash)
+  end
+
+  it "deduplicates repeated values in compressed output" do
+    hash = {
+      "first"  => "same value",
+      "second" => "same value",
+      "array"  => ["same value", "same value"],
+    }
+
+    uncompressed = Bplist::Writer.new(hash, false).io.to_slice
+    compressed = Bplist::Writer.new(hash, true).io.to_slice
+
+    object_count(compressed).should be < object_count(uncompressed)
+  end
+
+  it "writes to a file" do
+    hash = {
+      "value" => "written",
+    }
+
+    tempfile = File.tempfile("bplist_writer", ".plist") do |file|
+      writer = Bplist::Writer.new(hash)
+      writer.write_to_file(file.path)
+    end
+
+    Bplist::Parser.new(tempfile.path).parse.to_h.should eq(hash)
+  ensure
+    tempfile.try &.delete
   end
 end

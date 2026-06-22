@@ -1,6 +1,65 @@
 require "../spec_helper"
 
 describe Bplist::Any do
+  describe "#[] and #[]?" do
+    it "reads hash and array values" do
+      bplist_any = Bplist::Any.convert({
+        "array" => ["first", "second"],
+      })
+
+      bplist_any["array"][0].should eq("first")
+      bplist_any["missing"]?.should be_nil
+      bplist_any["array"][2]?.should be_nil
+    end
+
+    it "raises when indexing the wrong container type" do
+      bplist_any = Bplist::Any.convert("string")
+
+      expect_raises(Bplist::Error, "Expected Hash for #[](key : String), not String") do
+        bplist_any["key"]
+      end
+
+      expect_raises(Bplist::Error, "Expected Array for #[](index : Int), not String") do
+        bplist_any[0]
+      end
+    end
+  end
+
+  describe "#dig and #dig?" do
+    it "reads nested values" do
+      bplist_any = Bplist::Any.convert({
+        "nested" => {
+          "array" => ["value"],
+        },
+      })
+
+      bplist_any.dig("nested", "array", 0).should eq("value")
+      bplist_any.dig?("nested", "missing").should be_nil
+    end
+  end
+
+  describe "type accessors" do
+    it "returns typed values" do
+      bytes = Bytes[1, 2, 3]
+      bplist_any = Bplist::Any.convert({
+        "int"    => 42,
+        "float"  => 12.5,
+        "string" => "value",
+        "bytes"  => bytes,
+        "array"  => [1],
+      })
+
+      bplist_any["int"].as_i.should eq(42)
+      bplist_any["int"].as_i64.should eq(42_i64)
+      bplist_any["float"].as_f.should eq(12.5)
+      bplist_any["float"].as_f32.should eq(12.5_f32)
+      bplist_any["string"].as_s.should eq("value")
+      bplist_any["bytes"].as_bytes.should eq(bytes)
+      bplist_any["array"].as_a.should eq([Bplist::Any.convert(1)])
+      bplist_any.as_h["string"].should eq("value")
+    end
+  end
+
   describe "#to_h" do
     it "converts a hash to a modifiable Crystal Hash" do
       original_hash = {

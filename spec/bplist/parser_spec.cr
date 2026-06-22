@@ -1,6 +1,24 @@
 require "../spec_helper"
 
 describe Bplist::Parser do
+  it "parses from top-level Bplist.parse" do
+    hash = {
+      "ExampleDictionary" => {
+        "ExampleDate"  => Time.parse("2023-04-01 12:00:00 +00:00", "%Y-%m-%d %H:%M:%S %z", Time::Location::UTC),
+        "ExampleArray" => [
+          "Item 1",
+          "Item 2",
+          "Item 3",
+        ],
+      },
+      "ExampleString"  => "Hello, world!",
+      "ExampleInteger" => 42,
+      "ExampleBoolean" => true,
+    }
+
+    Bplist.parse("#{__DIR__}/../../assets/example.plist").should eq(Bplist::Any.convert(hash))
+  end
+
   it ".parse" do
     hash = {
       "ExampleDictionary" => {
@@ -50,6 +68,17 @@ describe Bplist::Parser do
     result = Bplist::Parser.parse(bytes)
 
     result.should eq(expected_result)
+  end
+
+  it "parses from IO" do
+    hash = {
+      "value" => "from io",
+    }
+
+    writer = Bplist::Writer.new(hash)
+    io = IO::Memory.new(writer.io.to_slice)
+
+    Bplist::Parser.parse(io).to_h.should eq(hash)
   end
 
   it "reads, modifies, writes, and reads again" do
