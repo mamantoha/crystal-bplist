@@ -91,6 +91,18 @@ describe Bplist::Writer do
     round_trip(hash).should eq(hash)
   end
 
+  it "round-trips nil values" do
+    hash = {
+      "nil"    => nil,
+      "nested" => {
+        "nil" => nil,
+      },
+      "array" => [nil, "value", nil],
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
   it "round-trips compressed output" do
     hash = {
       "first"  => "same value",

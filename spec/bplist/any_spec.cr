@@ -36,6 +36,17 @@ describe Bplist::Any do
       bplist_any.dig("nested", "array", 0).should eq("value")
       bplist_any.dig?("nested", "missing").should be_nil
     end
+
+    it "reads nested nil values" do
+      bplist_any = Bplist::Any.convert({
+        "nested" => {
+          "array" => [nil],
+        },
+      })
+
+      bplist_any.dig("nested", "array", 0).should eq(nil)
+      bplist_any.dig?("nested", "array", 0).should eq(Bplist::Any.convert(nil))
+    end
   end
 
   describe "type accessors" do
@@ -61,6 +72,24 @@ describe Bplist::Any do
   end
 
   describe "#to_h" do
+    it "converts nested nil values" do
+      bplist_any = Bplist::Any.convert({
+        "nil"    => nil,
+        "nested" => {
+          "nil" => nil,
+        },
+        "array" => [nil],
+      })
+
+      converted_hash = bplist_any.to_h
+      nested = converted_hash["nested"].as(Hash)
+      array = converted_hash["array"].as(Array)
+
+      converted_hash["nil"].should be_nil
+      nested["nil"].should be_nil
+      array[0].should be_nil
+    end
+
     it "converts a hash to a modifiable Crystal Hash" do
       original_hash = {
         "string"  => "value",
