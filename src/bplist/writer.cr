@@ -26,7 +26,7 @@ module Bplist
 
       # Size of object references in serialized containers
       # depends on the number of objects in the plist.
-      @object_ref_size = count_to_size(@offsets.size)
+      @object_ref_size = count_to_size(@indexed_list.size)
 
       debug_print(@object_ref_size)
 
@@ -318,7 +318,7 @@ module Bplist
       if length <= 0xFF
         Bytes[0x10, length.to_u8]
       elsif length <= 0xFFFF
-        Bytes[0x10, (length >> 8).to_u8, (length & 0xFF).to_u8]
+        Bytes[0x11, (length >> 8).to_u8, (length & 0xFF).to_u8]
       else
         raise Bplist::Error.new("length too long to encode")
       end
