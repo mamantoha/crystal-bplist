@@ -103,6 +103,53 @@ describe Bplist::Writer do
     round_trip(hash).should eq(hash)
   end
 
+  it "round-trips integer boundaries" do
+    hash = {
+      "int8_min"    => Int8::MIN,
+      "int8_max"    => Int8::MAX,
+      "int16_min"   => Int16::MIN,
+      "int16_max"   => Int16::MAX,
+      "int32_min"   => Int32::MIN,
+      "int32_max"   => Int32::MAX,
+      "int64_min"   => Int64::MIN,
+      "int64_max"   => Int64::MAX,
+      "int128_min"  => Int128::MIN,
+      "int128_max"  => Int128::MAX,
+      "nested_ints" => [Int8::MIN, Int16::MAX, Int32::MIN, Int64::MAX, Int128::MIN],
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
+  it "round-trips float values" do
+    hash = {
+      "float32_min" => Float32::MIN,
+      "float32_max" => Float32::MAX,
+      "float64_min" => Float64::MIN,
+      "float64_max" => Float64::MAX,
+      "nested"      => [0.0_f32, -12.5_f32, 14.88, -0.25],
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
+  it "round-trips time values as UTC" do
+    utc_time = Time.utc(2024, 1, 1, 12, 30, 15)
+    local_time = Time.parse("2024-01-01 14:30:15 +02:00", "%Y-%m-%d %H:%M:%S %z", Time::Location::UTC)
+
+    hash = {
+      "utc"    => utc_time,
+      "offset" => local_time,
+      "nested" => [utc_time],
+    }
+
+    result = round_trip(hash)
+
+    result["utc"].should eq(utc_time)
+    result["offset"].should eq(local_time.to_utc)
+    result["nested"].should eq([utc_time])
+  end
+
   it "round-trips compressed output" do
     hash = {
       "first"  => "same value",
