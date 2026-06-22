@@ -164,6 +164,60 @@ describe Bplist::Writer do
     result["nested"].should eq([utc_time])
   end
 
+  it "round-trips nested mixed values" do
+    time = Time.utc(2024, 2, 3, 4, 5, 6)
+    data = Bytes[0x01, 0x02, 0x03]
+    hash = {
+      "metadata" => {
+        "enabled" => true,
+        "count"   => 3,
+        "ratio"   => 0.75,
+        "created" => time,
+        "payload" => data,
+      },
+      "items" => [
+        {
+          "name"   => "first",
+          "active" => false,
+          "values" => [1, 2.5, nil],
+        },
+        {
+          "name"   => "second",
+          "active" => true,
+          "values" => [data, time],
+        },
+      ],
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
+  it "round-trips deeply nested arrays and hashes" do
+    hash = {
+      "level1" => {
+        "level2" => [
+          {
+            "level3" => [
+              {
+                "level4" => {
+                  "string" => "value",
+                  "int"    => 42,
+                  "float"  => 12.5_f32,
+                  "bool"   => true,
+                  "nil"    => nil,
+                  "bytes"  => Bytes[0x04, 0x05],
+                  "time"   => Time.utc(2024, 6, 1, 0, 0, 0),
+                },
+              },
+            ],
+          },
+        ],
+      },
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
   it "round-trips compressed output" do
     hash = {
       "first"  => "same value",
