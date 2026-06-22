@@ -95,7 +95,7 @@ describe Bplist::Parser do
     # Check top-level modifications
     modified_data["ExampleString"].should eq("This was modified!")
     modified_data["NewInteger"].should eq(999)
-    modified_data["NewBoolean"].should eq(false)
+    modified_data["NewBoolean"].should be_false
     modified_data["NewTime"].should eq(Time.utc(2024, 1, 1, 12, 0, 0))
 
     # Check nested modifications
@@ -112,7 +112,7 @@ describe Bplist::Parser do
 
     # Check that original data is still there
     modified_data["ExampleInteger"].should eq(42)
-    modified_data["ExampleBoolean"].should eq(true)
+    modified_data["ExampleBoolean"].should be_true
 
     # Clean up
     tempfile.delete

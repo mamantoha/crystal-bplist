@@ -18,7 +18,7 @@ describe Bplist::Any do
       # Should contain the same data
       converted_hash["string"].should eq("value")
       converted_hash["number"].should eq(42)
-      converted_hash["boolean"].should eq(true)
+      converted_hash["boolean"].should be_true
       converted_hash["nested"].should_not be_nil
 
       # Should be modifiable
@@ -55,7 +55,7 @@ describe Bplist::Any do
       # Should contain the same data
       converted_array[0].should eq("string")
       converted_array[1].should eq(42)
-      converted_array[2].should eq(true)
+      converted_array[2].should be_true
       converted_array[3].should_not be_nil
 
       # Should be modifiable
@@ -107,8 +107,8 @@ describe Bplist::Any do
     it "converts simple values to themselves" do
       Bplist::Any.convert("string").to_any.should eq("string")
       Bplist::Any.convert(42).to_any.should eq(42)
-      Bplist::Any.convert(true).to_any.should eq(true)
-      Bplist::Any.convert(nil).to_any.should eq(nil)
+      Bplist::Any.convert(true).to_any.should be_true
+      Bplist::Any.convert(nil).to_any.should be_nil
     end
   end
 end
