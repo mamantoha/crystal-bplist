@@ -69,6 +69,42 @@ describe Bplist::Any do
       bplist_any["array"].as_a.should eq([Bplist::Any.convert(1)])
       bplist_any.as_h["string"].should eq("value")
     end
+
+    it "returns optional typed values" do
+      bytes = Bytes[1, 2, 3]
+      bplist_any = Bplist::Any.convert({
+        "int32"   => 42,
+        "int64"   => 42_i64,
+        "float64" => 12.5,
+        "float32" => 12.5_f32,
+        "string"  => "value",
+        "bytes"   => bytes,
+        "array"   => [1],
+      })
+
+      bplist_any["int32"].as_i?.should eq(42)
+      bplist_any["int64"].as_i64?.should eq(42_i64)
+      bplist_any["float64"].as_f?.should eq(12.5)
+      bplist_any["float32"].as_f32?.should eq(12.5_f32)
+      bplist_any["string"].as_s?.should eq("value")
+      bplist_any["bytes"].as_bytes?.should eq(bytes)
+      bplist_any["array"].as_a?.should eq([Bplist::Any.convert(1)])
+    end
+
+    it "returns nil from optional typed values for mismatches" do
+      bplist_any = Bplist::Any.convert({
+        "int32"  => 42,
+        "string" => "value",
+      })
+
+      bplist_any["string"].as_i?.should be_nil
+      bplist_any["int32"].as_i64?.should be_nil
+      bplist_any["string"].as_f?.should be_nil
+      bplist_any["string"].as_f32?.should be_nil
+      bplist_any["int32"].as_s?.should be_nil
+      bplist_any["string"].as_bytes?.should be_nil
+      bplist_any["string"].as_a?.should be_nil
+    end
   end
 
   describe "#to_h" do
