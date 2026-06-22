@@ -2,8 +2,7 @@ class Bplist::Any
   # All possible Bplist types.
   alias Type = ValueType | Array(Bplist::Any) | Hash(String, Bplist::Any)
 
-  alias ValueType = Nil |
-                    Bool |
+  alias ValueType = Bool |
                     Int8 |
                     Int16 |
                     Int32 |
@@ -13,7 +12,7 @@ class Bplist::Any
                     Float64 |
                     String |
                     Time |
-                    Slice(UInt8)
+                    Slice(UInt8)?
 
   # Native Crystal types for conversion
   alias NativeType = ValueType | Array(NativeType) | Hash(String, NativeType)
@@ -111,8 +110,6 @@ class Bplist::Any
     case @raw
     when Hash, Array
       self[index_or_key]?
-    else
-      nil
     end
   end
 
@@ -191,8 +188,6 @@ class Bplist::Any
       raw.to_f32
     when Float
       raw.to_f32
-    else
-      nil
     end
   end
 
