@@ -103,6 +103,20 @@ describe Bplist::Writer do
     round_trip(hash).should eq(hash)
   end
 
+  it "round-trips boolean values" do
+    hash = {
+      "true"   => true,
+      "false"  => false,
+      "nested" => {
+        "true"  => true,
+        "false" => false,
+      },
+      "array" => [true, false, true],
+    }
+
+    round_trip(hash).should eq(hash)
+  end
+
   it "round-trips integer boundaries" do
     hash = {
       "int8_min"    => Int8::MIN,
@@ -173,6 +187,22 @@ describe Bplist::Writer do
     compressed = Bplist::Writer.new(hash, true).io.to_slice
 
     object_count(compressed).should be < object_count(uncompressed)
+  end
+
+  it "round-trips repeated booleans in compressed output" do
+    hash = {
+      "true"   => true,
+      "false"  => false,
+      "nested" => {
+        "true"  => true,
+        "false" => false,
+      },
+      "array" => [true, true, false, false],
+    }
+
+    writer = Bplist::Writer.new(hash, true)
+
+    Bplist::Parser.parse(writer.io.to_slice).to_h.should eq(hash)
   end
 
   it "round-trips compressed nested arrays and hashes" do
