@@ -1,13 +1,7 @@
 Lint/DebugCalls:
   Description: Disallows debug-related calls
   Excluded:
-  - src/bplist/helpers.cr
   - samples/*
-  MethodNames:
-  - p
-  - p!
-  - pp
-  - pp!
   Enabled: true
   Severity: Warning
 
